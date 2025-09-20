@@ -1,0 +1,48 @@
+<%- include('./partials/header.ejs') %>
+
+<h1 class="mb-4">Trang Chủ</h1>
+
+<main class="container-fluid" id="home">
+  <div class="row">
+    <div class="col-12">
+      <form id="searching-form">
+        <input type="text" name="search">
+        <button>Tìm Kiếm</button>
+      </form>
+    </div>
+    <div class="col-md-3 category">
+      <h3 class="mb-4">CÁC DANH MỤC</h3>
+      <ul>
+        <li>
+          <a class="choose_supplier_all" href="/">
+            Tất Cả
+          </a>
+        </li>
+        <% for(const tmp of category) { %>
+        <li>
+          <button class="choose_supplier" id_supplier="<%= tmp._id  %>"><%= tmp.name  %></button>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="col-md-9 data">
+      <div class="row listproduct">
+
+        <!-- sản phẩm -->
+        <% for(const tmp1 of products) { %>
+        <div class="col-md-4 mb-3">
+          <div class="product">
+            <div class="mb-3">Name : <%= tmp1.name %></div>
+            <div class="mb-3">Price : <%= tmp1.price %></div>
+            <div class="mb-3">Quantity : <%= tmp1.quantity %></div>
+          </div>
+        </div>
+        <% } %>
+
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('./partials/footer.ejs') %>

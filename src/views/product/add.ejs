@@ -1,0 +1,35 @@
+			<%- include('../partials/header.ejs') %>
+			<h1>Thêm sản phẩm</h1>
+			<form id="add-product">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-md-5">
+			        <div class="form-group">
+			          <label>Tên</label>
+			          <input type="text" class="form-control" placeholder="Tên Sản Phẩm" required name="name">
+			        </div>
+			        <div class="form-group">
+			          <label>Gía tiền</label>
+			          <input type="text" class="form-control" placeholder="Địa Chỉ" required name="price">
+			        </div>
+			        <div class="form-group">
+			          <label>Số lượng</label>
+			          <input type="text" class="form-control" placeholder="Nhập Số Lượng" required name="quantity">
+			        </div>
+			        <div class="form-group">
+			          <label>Chọn Nguồn Cung Cấp</label>
+			          <select class="form-control" name="supplierId">
+			            <option value="">Chọn Nguồn Cung Cấp</option>
+			            <% for( const tmp of categoryList ) { %>
+			            <option value="<%= tmp._id %>"><%= tmp.name %></option>
+			            <% } %>
+			          </select>
+			        </div>
+			        <div class="form-group">
+			          <button class="btn btn-success" type="submit">Lưu</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</form>
+			<%- include('../partials/footer.ejs') %>

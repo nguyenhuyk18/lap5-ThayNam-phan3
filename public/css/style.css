@@ -1,0 +1,25 @@
+.active {
+	background-color: yellow !important;
+	color: red !important;
+}
+
+label {
+	font-weight: normal;
+}
+
+#home {
+	border: 1px solid #000;
+}
+
+#home .category {
+	border-right: 1px solid #000;
+}
+
+
+#home .data {
+	padding: 10px;
+}
+
+#home .product {
+	border: 1px solid #000;
+}

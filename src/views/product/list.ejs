@@ -1,0 +1,36 @@
+			<%- include('../partials/header.ejs') %>
+			<h1>Danh sách Sản Phẩm</h1>
+			<a href="/product/add.html" class="btn btn-info">Thêm Sản Phẩm</a>
+			<form action="list.html" method="GET">
+			  <label class="form-inline justify-content-end">Tìm kiếm: <input type="search" name="search" class="form-control" value="">
+			    <button class="btn btn-danger">Tìm</button>
+			  </label>
+			  <input type="hidden" name="c" value="subject">
+			</form>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th>#</th>
+			      <th>Tên</th>
+			      <th>Gía</th>
+			      <th>Số Lượng</th>
+			      <th colspan="2">Tùy Chọn</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <%  let stt = 0; for( const tmp of listProduct ) {  stt++; %>
+			    <tr>
+			      <td><%= stt %></td>
+			      <td><%= tmp.name %></td>
+			      <td><%= tmp.price %></td>
+			      <td><%= tmp.quantity %></td>
+			      <td><a href="/product/edit/<%= tmp._id %>">Sửa</a></td>
+			      <td><button class="delete-product" id="<%= tmp._id %>">Xóa</button></td>
+			    </tr>
+			    <% } %>
+			  </tbody>
+			</table>
+			<div>
+			  <span>Số lượng: <%= listProduct.length  %></span>
+			</div>
+			<%- include('../partials/footer.ejs') %>
