@@ -9,7 +9,7 @@ checkLogin = (req, res, next) => {
     if (!user) {
 
         if (path.startsWith('/api/')) {
-            res.status(500).json({ message: 'Không có thẩm quyền !!!' });
+            res.status(500).json({ message: 'Không có thẩm quyền để thực hiện chức năng này, đi raaaa !!!' });
             return;
         }
 
