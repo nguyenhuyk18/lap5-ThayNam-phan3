@@ -22,7 +22,8 @@ router.get('/supplier', (req, res, next) => {
     res.locals.user = req.session.user || null;
     // console.log(req.session.user, ' , ', req.originalUrl)
     next();
-}, checkLogin, listSuppliers)
+}, checkLogin, listSuppliers);
+
 router.get('/supplier/add.html', (req, res, next) => {
     res.locals.user = req.session.user || null;
     // console.log(req.session.user, ' , ', req.originalUrl)

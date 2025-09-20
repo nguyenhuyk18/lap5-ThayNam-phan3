@@ -64,11 +64,10 @@ const { handleError } = require('./middlewares/errorHandler');
 app.use('/', ProductRouters);
 
 
-app.use((req, res, next) => {
-    req.localTmp = app.locals
-    next();
-})
-
+// app.use((req, res, next) => {
+//     req.localTmp = app.locals
+//     next();
+// })
 
 // // login bên admin
 // app.use((req, res, next) => {
